@@ -1,0 +1,6 @@
+com/example/fragment/databinding/FragmentViewBinding.java
+ com.example.fragment.databinding.FragmentViewBinding
+com/example/fragment/BuildConfig.java
+ com.example.fragment.BuildConfig
+com/example/fragment/databinding/ActivityMainBinding.java
+ com.example.fragment.databinding.ActivityMainBinding
