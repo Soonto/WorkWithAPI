@@ -7,6 +7,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "WorkWithAPI"
-include ':app'
-include ':fragment'
+//include ':app'
+include ':myApp'
 

@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Fragment</string>
+    <string name="app_name">WorkWithAPI</string>
     <string name="cancel">cancel</string>
     <string name="next">Next</string>
     <string name="NumberOfFragment">numberOfFragment: </string>
     <string name="bar">bar</string>
     <string name="login">Login</string>
     <string name="password">password</string>
+    <string name="nextCharter">NextCharter</string>
+    <string name="previousCharter">previous charter</string>
+    <string name="defaultName">defaultName</string>
 </resources>
