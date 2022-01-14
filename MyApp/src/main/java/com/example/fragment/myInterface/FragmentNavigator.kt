@@ -1,4 +1,4 @@
-package com.example.fragment.fragment
+package com.example.fragment.myInterface
 
 interface FragmentNavigator {
     fun getNextPage()

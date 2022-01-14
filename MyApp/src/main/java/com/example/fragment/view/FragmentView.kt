@@ -1,4 +1,4 @@
-package com.example.fragment.fragment
+package com.example.fragment.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,14 +25,7 @@ class FragmentView : Fragment() {
         binding.location.text = this.arguments?.getString(ARG_LOCATION)
         return binding.root
     }
-    fun nextPage(){
-        parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer,FragmentView.newInstance{
-                bundleOf(Pair(ARG_NAME, "Morty"), Pair(ARG_LOCATION, "SPB"))
-            })
-            .commit()
-    }
+
 
     companion object{
         fun newInstance(callBack: CallBack): FragmentView {

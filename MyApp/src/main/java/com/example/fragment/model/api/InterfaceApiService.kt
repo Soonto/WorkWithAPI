@@ -1,16 +1,18 @@
-package com.example.fragment.fragment.api
+package com.example.fragment.model.api
 
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface InterfaceApiService {
-    @GET("1")
-    fun getCharacter(): Call<Character>
+
+    @GET("{id}")
+    fun getCharacter(@Path("id") employeeId: String): Call<Character>
     companion object{
         private var retrofit : Retrofit? = null
-        private val baseUrl = "https://rickandmortyapi.com/api/character/"
+        private const val baseUrl = "https://rickandmortyapi.com/api/character/"
 
         fun getApiService(): InterfaceApiService{
             if(retrofit == null) {
