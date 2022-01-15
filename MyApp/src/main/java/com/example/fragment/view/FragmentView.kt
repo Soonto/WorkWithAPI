@@ -10,6 +10,7 @@ import com.example.fragment.R
 
 import com.example.fragment.databinding.FragmentViewBinding
 import com.example.fragment.myInterface.CallBack
+import com.squareup.picasso.Picasso
 
 
 class FragmentView : Fragment() {
@@ -20,9 +21,11 @@ class FragmentView : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
+        val picasso = Picasso.get()
         binding = FragmentViewBinding.inflate(inflater, container, false)
         binding.Name.text = this.arguments?.getString(ARG_NAME)
         binding.location.text = this.arguments?.getString(ARG_LOCATION)
+        picasso.load(this.arguments?.getString(ARG_IMGURL)).into(binding.imagePlace)
         return binding.root
     }
 
@@ -35,6 +38,7 @@ class FragmentView : Fragment() {
         }
         const val ARG_NAME = "arg_name"
         const val ARG_LOCATION = "arg_location"
+        const val ARG_IMGURL = "arg_img"
 
     }
 

@@ -19,6 +19,7 @@
 
     <Button
         android:id="@+id/cancelButton"
+        android:visibility="invisible"
         android:text="@string/previousCharter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
