@@ -11,6 +11,7 @@ import com.example.fragment.R
 import com.example.fragment.databinding.FragmentViewBinding
 import com.example.fragment.myInterface.CallBack
 import com.squareup.picasso.Picasso
+import java.util.*
 
 
 class FragmentView : Fragment() {
@@ -29,7 +30,6 @@ class FragmentView : Fragment() {
         return binding.root
     }
 
-
     companion object{
         fun newInstance(callBack: CallBack): FragmentView {
             val fragment = FragmentView()
@@ -39,6 +39,7 @@ class FragmentView : Fragment() {
         const val ARG_NAME = "arg_name"
         const val ARG_LOCATION = "arg_location"
         const val ARG_IMGURL = "arg_img"
+        const val ARG_ID = "id"
 
     }
 

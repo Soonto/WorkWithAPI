@@ -15,13 +15,12 @@ class ViewModel(
 ) : ViewModel(), FragmentNavigator {
     private val _character =    savedStateHandle.getLiveData<Character>(KEY)
     val character: LiveData<Character> = _character
-    val maxIdCharacter = 826
+    private val maxIdCharacter = 826
     override fun getNextPage() {
         model.getCharter(Random.nextInt(1, maxIdCharacter)) {
             _character.value = it
         }
     }
-
     override fun getPreviousPage() {
     }
     companion object{
