@@ -1,5 +1,6 @@
 package com.example.fragment.model.api
 
+import com.example.fragment.model.Character
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

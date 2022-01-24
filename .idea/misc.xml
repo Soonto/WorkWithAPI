@@ -3,16 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/activity_main.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/fragment_view.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/app/MyApplication/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/drawable/ic_baseline_accessibility_24.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/activity_main.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/activity_main_vertical.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/character_view_for_resview.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/fragment_view.xml" value="0.22" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/recycle_view_fragment.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/result_view.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/Soonto/AndroidStudioProjects/WorkWithAPI/MyApp/src/main/res/layout/sample_my_view.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

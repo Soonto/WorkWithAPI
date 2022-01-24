@@ -1,4 +1,4 @@
-package com.example.fragment.model.api
+package com.example.fragment.model
 
 data class Character(
     val id : Int,

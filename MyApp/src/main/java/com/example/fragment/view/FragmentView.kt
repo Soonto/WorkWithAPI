@@ -1,5 +1,6 @@
 package com.example.fragment.view
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,8 @@ class FragmentView : Fragment() {
         picasso.load(this.arguments?.getString(ARG_IMGURL)).into(binding.imagePlace)
         return binding.root
     }
+
+
 
     companion object{
         fun newInstance(callBack: CallBack): FragmentView {
