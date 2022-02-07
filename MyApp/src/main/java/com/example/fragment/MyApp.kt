@@ -1,9 +1,9 @@
-package com.example.fragment.myApp
+package com.example.fragment
 
 import android.app.Application
 import androidx.lifecycle.SavedStateHandle
-import com.example.fragment.model.MyRepository
-import com.example.fragment.view_model.MainActivityViewModel
+import com.example.fragment.data.MyRepository
+import com.example.fragment.presenter.viewModel.MainActivityViewModel
 
 
 class MyApp : Application() {

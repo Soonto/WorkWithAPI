@@ -1,28 +1,23 @@
-package com.example.fragment.view_model
+package com.example.fragment.presenter.viewModel
 
 import androidx.lifecycle.*
-import com.example.fragment.model.Repository
-import com.example.fragment.model.Character
-import com.example.fragment.model.MyCallBack
-import com.example.fragment.myInterface.FragmentNavigator
-import java.security.CryptoPrimitive
+import com.example.fragment.domain.entities.Character
+import com.example.fragment.data.MyCallBack
+import com.example.fragment.domain.Repository
+import com.example.fragment.presenter.myInterface.FragmentNavigator
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 enum class Mode{
     RECYCLE_VIEW,
     COMMON
 }
-class MyListener<T> : Observer<T>{
-    override fun onChanged(t: T?) {
-        TODO("Not yet implemented")
-    }
 
-}
 class MainActivityViewModel(
     private val repository: Repository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel(), FragmentNavigator {
-    private val _character =    savedStateHandle.getLiveData<Character>(KEY_CHARACTER)
+    private var _character =    savedStateHandle.getLiveData<Character>(KEY_CHARACTER)
     private val _mode =  savedStateHandle.getLiveData<Mode>(KEY_MODE)
 
     val character: LiveData<Character> = _character
@@ -30,6 +25,11 @@ class MainActivityViewModel(
 
     private val maxIdCharacter = 826
     var characterList = listOf<Character>()
+    val observer  = Observer<Character> {
+        _character.value = it
+    }
+
+
     override fun getNextPage() {
         repository.getCharter(Random.nextInt(1, maxIdCharacter)) {
             _character.value = it
@@ -37,10 +37,13 @@ class MainActivityViewModel(
     }
 
     override fun getCharacterList(callBack: MyCallBack<List<Character>>) {
-        repository.getChartersList(0, 100){
-            callBack.done(it)
-            characterList = it
+        viewModelScope.launch{
+            repository.getChartersList(0, 100) {
+                callBack.done(it)
+                characterList = it
+            }
         }
+
     }
     override fun getPreviousPage() {
     }
@@ -60,4 +63,8 @@ class MainActivityViewModel(
         const val  KEY_MODE = "key_mode"
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        repository.character.removeObserver(observer)
+    }
 }

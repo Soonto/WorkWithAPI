@@ -1,10 +1,9 @@
-package com.example.fragment
+package com.example.fragment.presenter
 
 
-import android.app.Application
 import android.view.GestureDetector
 import android.view.MotionEvent
-import com.example.fragment.view_model.MainActivityViewModel
+import com.example.fragment.presenter.viewModel.MainActivityViewModel
 
 class GestureListener(
     private val viewModel : MainActivityViewModel

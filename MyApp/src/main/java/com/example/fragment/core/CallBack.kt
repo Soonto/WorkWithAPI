@@ -1,4 +1,4 @@
-package com.example.fragment.myInterface
+package com.example.fragment.core
 
 import android.os.Bundle
 

@@ -1,6 +1,7 @@
-package com.example.fragment.model.api
+package com.example.fragment.data.api
 
-import com.example.fragment.model.Character
+import com.example.fragment.domain.entities.Character
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -11,13 +12,16 @@ interface InterfaceApiService {
 
     @GET("{id}")
     fun getCharacter(@Path("id") employeeId: String): Call<Character>
-    companion object{
+    object Factory{
         private var retrofit : Retrofit? = null
         private const val baseUrl = "https://rickandmortyapi.com/api/character/"
 
-        fun getApiService(): InterfaceApiService{
+        val okHttpClient = OkHttpClient().newBuilder().addInterceptor(MyInterceptor()).build()
+
+        fun getApiService(): InterfaceApiService {
             if(retrofit == null) {
                 retrofit = Retrofit.Builder()
+                    .client(okHttpClient)
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
@@ -27,3 +31,4 @@ interface InterfaceApiService {
 
     }
 }
+

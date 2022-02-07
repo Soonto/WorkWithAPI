@@ -1,8 +1,8 @@
-package com.example.fragment.view
+package com.example.fragment.presenter.view
 
 import android.os.Bundle
 import androidx.core.os.bundleOf
-import com.example.fragment.myInterface.CallBack
+import com.example.fragment.core.CallBack
 
 class FragmentFactory(
     private val id: Int = 0,

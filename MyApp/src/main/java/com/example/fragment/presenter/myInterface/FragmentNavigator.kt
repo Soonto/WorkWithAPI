@@ -1,7 +1,7 @@
-package com.example.fragment.myInterface
+package com.example.fragment.presenter.myInterface
 
-import com.example.fragment.model.Character
-import com.example.fragment.model.MyCallBack
+import com.example.fragment.domain.entities.Character
+import com.example.fragment.data.MyCallBack
 
 interface FragmentNavigator {
     fun getNextPage()

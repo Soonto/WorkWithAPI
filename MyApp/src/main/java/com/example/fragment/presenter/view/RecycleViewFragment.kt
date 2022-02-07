@@ -1,4 +1,4 @@
-package com.example.fragment.view
+package com.example.fragment.presenter.view
 
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fragment.databinding.RecycleViewFragmentBinding
-import com.example.fragment.myApp.MyApp
+import com.example.fragment.MyApp
 
 class RecycleViewFragment : Fragment() {
     private var binding : RecycleViewFragmentBinding? = null

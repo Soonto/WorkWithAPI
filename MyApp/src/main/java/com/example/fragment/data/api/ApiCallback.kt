@@ -1,7 +1,7 @@
-package com.example.fragment.model.api
+package com.example.fragment.data.api
 
-import com.example.fragment.model.Character
-import com.example.fragment.model.MyCallBack
+import com.example.fragment.domain.entities.Character
+import com.example.fragment.data.MyCallBack
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

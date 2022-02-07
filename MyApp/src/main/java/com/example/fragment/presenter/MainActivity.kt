@@ -1,20 +1,23 @@
-package com.example.fragment
+package com.example.fragment.presenter
 
 import android.annotation.SuppressLint
-import android.content.res.Configuration
+import android.content.ComponentName
+import android.content.Intent
+import android.content.Intent.FLAG_INCLUDE_STOPPED_PACKAGES
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.View
+import com.example.fragment.MyApp
+import com.example.fragment.R
 import com.example.fragment.databinding.ActivityMainBinding
-import com.example.fragment.model.Character
-import com.example.fragment.view.FragmentView
-import com.example.fragment.myApp.MyApp
-import com.example.fragment.view.FragmentFactory
-import com.example.fragment.view.FragmentView.Companion.ARG_ID
-import com.example.fragment.view.RecycleViewFragment
-import com.example.fragment.view_model.MainActivityViewModel
-import com.example.fragment.view_model.Mode
+import com.example.fragment.domain.entities.Character
+import com.example.fragment.presenter.view.FragmentView
+import com.example.fragment.presenter.view.FragmentFactory
+import com.example.fragment.presenter.view.FragmentView.Companion.ARG_ID
+import com.example.fragment.presenter.view.RecycleViewFragment
+import com.example.fragment.presenter.viewModel.MainActivityViewModel
+import com.example.fragment.presenter.viewModel.Mode
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +44,15 @@ class MainActivity : AppCompatActivity() {
             currentFragment = defFragment
             setDefFragment()
         }
+
+        //  как рабоает вызов бродкаста
+        val intent = Intent("KEY")
+        intent.putExtra("1234", 1234)
+        intent.addFlags(FLAG_INCLUDE_STOPPED_PACKAGES)
+        sendBroadcast(intent)
+        //
+
+
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -86,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         if (supportFragmentManager.fragments.last().arguments?.get(ARG_ID) != currentFragment.arguments?.get(ARG_ID)) {
             supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(R.animator.animator, R.animator.animator_exit)
                 .replace(binding.fragmentContainer.id, currentFragment)
                 .addToBackStack(null)
                 .commit()

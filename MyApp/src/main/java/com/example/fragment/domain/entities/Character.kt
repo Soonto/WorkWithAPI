@@ -1,6 +1,8 @@
-package com.example.fragment.model
+package com.example.fragment.domain.entities
 
-data class Character(
+
+
+data class Character (
     val id : Int,
     val name : String,
     val image : String,
